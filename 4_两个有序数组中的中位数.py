@@ -11,40 +11,48 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: float
         """
-        
         # > ref https://blog.csdn.net/hk2291976/article/details/51107778
-        import sys
+        # nums1是最短的那个
         n = len(nums1)
         m = len(nums2)
         if m<n:
             return self.findMedianSortedArrays(nums2,nums1)
-        
-        # 先把扩充加# 虚拟的，则第一个数组长度变为2*n+1 最后一个位置是2n
-        l1 =0
-        h1 = 2*n
-        while l1<h1:
-            #第一个数组的割在（l1+h1）/2 在扩充的数组中
-            c1 = (l1+h1)/2
-            # 由于是中值，则第二个割值在(2m+2n+2 /2 -c1-1)
-            c2 = m+n - c1
-            # 再把c1 c2映射会原位置
-            nl_loc = int((c1-1)/2)
-            nr_loc = int((c1)/2)
-            L1 = float('-inf') if nl_loc==0 else nums1[nl_loc]
-            R1 = float('inf') if nr_loc==2*n else nums1[nr_loc]
-            nl_loc = int((c2-1)/2)
-            nr_loc = int((c2)/2)
-            L2 = float('-inf') if nl_loc==0 else nums2[nl_loc]
-            R2 = float('inf') if nr_loc==2*m else nums2[nr_loc]
-            if L1>R2:
-                hi = c1-1
-            elif L2>R1:
-                lo = c1+ 1
+        # 避免有个为空
+        if n == 0:
+            return  (nums2[m//2] +nums2[m//2 -(m+1)%2])/2.0
+        L1 = n//2
+        R1 = L1+1
+        L2 = (m+n)//2 - (L1+1)-1
+        R2 = L2+1
+        L1_v = nums1[L1] if L1>-1 else float("-inf")
+        R1_v = nums1[R1] if R1<n else float("inf")
+        L2_v = nums2[L2] if L2>-1 else float("-inf")
+        R2_v = nums2[R2] if R2<m else float("inf")
+        while L1_v >R2_v or L2_v>R1_v:
+            if L1_v >R2_v:
+                L1 = L1 -1
+                R1 = R1-1
+                R1_v = L1_v
+                L1_v = nums1[L1] if L1>-1 else float("-inf")
+                L2 = L2+1
+                R2 = R2 +1
+                L2_v = R2_v
+                R2_v = nums2[R2] if R2<m else float("inf")
             else:
-                break
-            
-        return (max(L1,L2) +min(R1,R2))/2.0
-print(Solution().findMedianSortedArrays([1,3], [2]))       
+                L2 = L2 -1
+                R2 = R2 -1
+                R2_v = L2_v
+                L2_v = nums2[L2] if L2>-1 else float("-inf")
+                L1 = L1+1
+                R1 = R1+1
+                L1_v = R1_v
+                R1_v = nums1[R1] if R1<n else float("inf")
+        if (m+n) %2 !=0:
+            return min(R1_v,R2_v)
+        else:
+            return (max(L1_v,L2_v)+min(R1_v,R2_v))/2.0
+        
+print(Solution().findMedianSortedArrays([1,2], [3,4]))       
         
         
         
