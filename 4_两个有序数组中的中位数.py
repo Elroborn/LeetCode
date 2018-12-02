@@ -11,6 +11,7 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: float
         """
+        # 中心扩散法
         # > ref https://blog.csdn.net/hk2291976/article/details/51107778
         # nums1是最短的那个
         n = len(nums1)
