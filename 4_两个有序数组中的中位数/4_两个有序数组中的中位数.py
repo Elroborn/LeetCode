@@ -4,6 +4,7 @@ Created on 2018年11月30日
 @author: coderwangson
 '''
 "#codeing=utf-8"
+# 68 ms
 class Solution(object):
     def findMedianSortedArrays(self, nums1, nums2):
         """
@@ -20,6 +21,7 @@ class Solution(object):
             return self.findMedianSortedArrays(nums2,nums1)
         # 避免有个为空
         if n == 0:
+            # m//2 -(m+1)%2因为是奇数的话(m+1)%2 =0偶数的话等于1，相当于用数学避免一个ifelse
             return  (nums2[m//2] +nums2[m//2 -(m+1)%2])/2.0
         L1 = n//2
         R1 = L1+1

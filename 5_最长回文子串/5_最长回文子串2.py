@@ -4,8 +4,8 @@ Created on 2018年11月27日
 @author: coderwangson
 '''
 "#codeing=utf-8"
-
 class Solution(object):
+    
     def longestPalindrome(self, s):
         """
         :type s: str
