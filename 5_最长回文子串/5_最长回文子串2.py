@@ -26,7 +26,7 @@ class Solution(object):
                     d[i][i+1] =1
                     start = i
                     longest = 2
-        # 构造数组右三角，按对角线构造
+        # 构造数组右三角，按对角线构造,就是每次外层for遍历的为一个斜的对角线
         for l in range(3,length+1):
             for i in range(0,length+1-l):
                 j = i+l-1
