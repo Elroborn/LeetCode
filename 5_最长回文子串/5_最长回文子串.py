@@ -30,6 +30,7 @@ class Solution(object):
                     temp = self.check(s,start,i)
                     if len(temp)>len(best):
                         best = temp
+                        break
                 dict[s[i]].append(i)
         return best
                      
