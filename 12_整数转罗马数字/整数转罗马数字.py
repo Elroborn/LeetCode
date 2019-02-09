@@ -21,8 +21,10 @@ class Solution:
             return ''
         if str(num)[0]=='4':
             base = 400
+            #看是400多还是40多（因为题目中要求不超过3999）
             while num -base<0:
                 base=base//10
+            #把剩下的部分进行递归
             return special_num_char[base] + Solution().intToRoman(num - base)
         if str(num)[0]=='9':
             base = 900
@@ -31,8 +33,10 @@ class Solution:
             return special_num_char[base] + Solution().intToRoman(num - base)
 
         keys = sorted(list(dict_char.keys()),reverse=True)
+        # 看是多个1000还是多个500等等
         for base in keys:
             if num//base>0:
                 i = num//base
+                # 把余数进行递归
                 return dict_char[base]*i+Solution().intToRoman(num%base)
 print(Solution().intToRoman(1994))

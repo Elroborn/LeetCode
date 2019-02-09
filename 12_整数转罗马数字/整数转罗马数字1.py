@@ -18,17 +18,19 @@ class Solution:
         # 按照10这类去找，分为1-3  4 5-8 9 四类，而5开头的放在5-8之间
         for i in range(0,len(nums),2):
             x = num//nums[i]
+            # 如果当前不够，比如当前num是200，但是开始是除1000，则为0所以不影响
             if x<4:
                 res+=(roman[i]*x)
             if x==4:
                 res+=roman[i]+roman[i-1]
-            if x>4 and x<9:
+            if x==5:
                 # 算5的那部分
                 res+=roman[i-1]
+            if x>5 and x<9:
                 # 多于5的那部分
-                res+=(roman[i]*(x-5))
+                res+=(roman[i-1]+roman[i]*(x-5))
             if x==9:
                 res+=roman[i]+roman[i-2]
             num = num%nums[i]
         return res
-print(Solution().intToRoman(58))
+print(Solution().intToRoman(1485))
