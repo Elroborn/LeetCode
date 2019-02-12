@@ -4,3 +4,8 @@
 .settings/org.eclipse.core.resources.prefs
 test.py
 leetbook.pdf
+.idea/encodings.xml
+.idea/leetcode.iml
+.idea/modules.xml
+.idea/misc.xml
+.idea/workspace.xml
