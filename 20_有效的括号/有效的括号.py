@@ -12,3 +12,20 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
+        l = []
+        for i in s:
+            if i in ['(','[','{']:
+                l.append(i)
+            else:
+                if len(l)>0:
+                    c =l.pop()
+                else:
+                    return False
+                if (i ==')' and c=='(') or (i==']' and c=='[') or (i=='}' and c=='{'):
+                    continue
+                else:
+                    return False
+        return len(l)==0
+
+print(Solution().isValid("]"))
+
