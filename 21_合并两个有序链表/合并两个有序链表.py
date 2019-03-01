@@ -22,5 +22,5 @@ class Solution(object):
 l1 = ListNode(1)
 import numpy as np
 n = np.random.randint(1,100,[4])
-for i in n:
-    print(i)
+# for i in n:
+#     print(i)
