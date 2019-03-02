@@ -25,7 +25,23 @@ class Solution(object):
         r = h
 
         while l1 and l2:
-            pass
+            if l1.val<l2.val:
+                r.next = l1
+                r = l1
+                l1 = l1.next
+            else:
+                r.next =l2
+                r = l2
+                l2 = l2.next
+        if l2:
+            l1 = l2
+        while l1:
+            r.next = l1
+            r = l1
+            l1 = l1.next
+        r.next = None
+        return h.next
+
 
 
 
