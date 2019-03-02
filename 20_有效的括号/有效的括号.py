@@ -4,8 +4,6 @@ Created on 2019/2/28 18:54
 @author: coderwangson
 """
 "#codeing=utf-8"
-
-
 class Solution(object):
     def isValid(self, s):
         """
