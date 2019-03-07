@@ -18,19 +18,21 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        p = head
-        r = None
-        first = True
-        if p :
-            r = p.next
-        while p and r:
-            p.next = r.next
-            r.next = p
-            # 避免头结点丢掉
-            if first:
-                head = r
-                first = False
-            p = p.next
-            if p:
-                r = p.next
-        return head
+       #可以看做是遍历一遍，只是每此把遍历的这个结点的后两个交换下位置即可
+        h = ListNode(-1)
+        h.next = head
+        pre = h
+        # 如果后面有两个结点
+        while pre.next and pre.next.next:
+            p = pre.next
+            q = p.next
+
+            pre.next = q
+            p.next = q.next
+            q.next =p
+
+            pre = p
+
+        return h.next
+
+
