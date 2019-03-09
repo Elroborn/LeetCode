@@ -12,5 +12,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        for i in nums[1:]:
-            
+        j = 0
+        for i in range(1,len(nums)):
+            if nums[i] ==nums[j]:
+                continue
+            else:
+                j+=1
+                nums[j] = nums[i]
+
+
+
