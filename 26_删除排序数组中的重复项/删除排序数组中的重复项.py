@@ -13,6 +13,8 @@ class Solution(object):
         :rtype: int
         """
         j = 0
+        if len(nums) ==0:
+            return j
         for i in range(1,len(nums)):
             if nums[i] ==nums[j]:
                 continue
@@ -21,6 +23,6 @@ class Solution(object):
                 nums[j] = nums[i]
         return j+1
 
-print(Solution().removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
+print(Solution().removeDuplicates([1]))
 
 
