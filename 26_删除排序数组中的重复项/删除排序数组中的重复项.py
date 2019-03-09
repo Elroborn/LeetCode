@@ -19,6 +19,8 @@ class Solution(object):
             else:
                 j+=1
                 nums[j] = nums[i]
+        return j+1
 
+print(Solution().removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
 
 
