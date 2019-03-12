@@ -13,6 +13,8 @@ class Solution(object):
         :type words: List[str]
         :rtype: List[int]
         """
+        if s=="" or len(words)==0:
+            return []
         n = len(words)
         m = len(words[0])
         map1 ={}
@@ -41,4 +43,4 @@ class Solution(object):
 
 
 
-print(Solution().findSubstring("barfoothefoobarman",["foo","bar"]))
+print(Solution().findSubstring("sd",[]))
