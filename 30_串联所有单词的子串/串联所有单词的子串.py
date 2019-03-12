@@ -4,8 +4,8 @@ Created on 2019/3/12 20:35
 @author: coderwangson
 """
 "#codeing=utf-8"
-
-
+# ref https://www.cnblogs.com/grandyang/p/4521224.html
+# 424 ms
 class Solution(object):
     def findSubstring(self, s, words):
         """
