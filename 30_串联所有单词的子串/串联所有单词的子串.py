@@ -19,7 +19,7 @@ class Solution(object):
         m = len(words[0])
         map1 ={}
         res = []
-        for i in words: map1[i]=1
+        for i in words: map1[i] =1 if i not in map1 else map1[i]+1
         # 从每个可能的起点遍历
         for i in range(len(s)-m*n+1):
             map2 ={}
@@ -43,4 +43,4 @@ class Solution(object):
 
 
 
-print(Solution().findSubstring("sd",[]))
+print(Solution().findSubstring("wordgoodgoodgoodbestword",["word","good","best","good"]))
