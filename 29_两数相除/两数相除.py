@@ -22,6 +22,7 @@ class Solution(object):
             tmp = b
             cur = 1
             while a>(tmp<<1):
+                # tmp = tmp *2
                 tmp = tmp<<1
                 cur=cur<<1
             a-=tmp
