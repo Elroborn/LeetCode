@@ -12,6 +12,8 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        if len(s) ==0:
+            return 0
         # 如果第一个是 ( 的
         for i in range(len(s)):
             if s[i] =="(":
@@ -22,4 +24,4 @@ class Solution(object):
             if j<0:break
         return (k-i+1)//2
 
-print(Solution().longestValidParentheses(")()())"))
+print(Solution().longestValidParentheses(""))
