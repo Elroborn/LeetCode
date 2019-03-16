@@ -22,6 +22,6 @@ class Solution(object):
         for k in range(i,len(s)):
             j = j +1 if s[k]=="(" else j-1
             if j<0:break
-        return (k-i+1)//2
+        return k-i-abs(j)+1
 
-print(Solution().longestValidParentheses(""))
+print(Solution().longestValidParentheses("((((((()"))
