@@ -14,14 +14,24 @@ class Solution(object):
         """
         if len(s) ==0:
             return 0
-        # 如果第一个是 ( 的
+        # 模拟栈
+        l = []
+        start = 0
+        maxlen = 0
         for i in range(len(s)):
-            if s[i] =="(":
-                break
-        j = 0
-        for k in range(i,len(s)):
-            j = j +1 if s[k]=="(" else j-1
-            if j<0:break
-        return k-i-abs(j)+1
+            if s[i] =='(':
+                l.append(i)
+            else:
+                if len(l) ==0:
+                    start = i+1
+                else:
+                    tmp = l.pop()
+                    if len(l) ==0:
+                        maxlen = max(i-start+1,maxlen)
+                    else:
+                        maxlen = max(i-l[-1],maxlen)
+        return maxlen
 
-print(Solution().longestValidParentheses("((((((()"))
+
+
+print(Solution().longestValidParentheses("()()()((()()"))
