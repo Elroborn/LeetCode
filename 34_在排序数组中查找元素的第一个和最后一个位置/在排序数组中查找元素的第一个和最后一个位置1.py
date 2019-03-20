@@ -5,7 +5,6 @@ Created on 2019/3/19 20:02
 """
 "#codeing=utf-8"
 
-#TODO 未完成更优秀的
 class Solution(object):
     def searchRange(self, nums, target):
         """
@@ -29,18 +28,43 @@ class Solution(object):
         # 如果没有进上面的else，则说明进了if的break，则说明有戏
         # 则再次进行二分对左右都进行二分
         # 左边则找一个元素，这个元素不是target，但是这个元素的下个元素是target
-        left = mid
-        right = mid
-        while left>=start:
-            if nums[left] == target:
-                left-=1
-            else:
+        left = 0
+        right = mid-1
+        res = []
+        while left <=right:
+            mid = (right+left) //2
+            if nums[mid]!=target and nums[mid+1] ==target:
                 break
-        while right<=end:
-            if nums[right]==target:
-                right+=1
-            else:
+            # 因为nums[mid]是不可能>target的，所以就这两种情况
+            if nums[mid]<target:
+                left = mid+1
+            elif nums[mid] ==target:
+                right = mid-1
+
+        if left>right:
+            res.append(mid)
+        else:
+            res.append(mid+1)
+        left = mid+1
+        right = len(nums) -1
+        while left<=right:
+            mid = (left+right) //2
+            if nums[mid]!=target and nums[mid-1]==target:
                 break
+            if nums[mid] >target:
+                right= mid-1
+            elif nums[mid]==target:
+                left = mid+1
+        if left>right:
+            res.append(mid)
+        else:
+            res.append(mid-1)
+        return res
+
+
+
+
+
 
 
 
