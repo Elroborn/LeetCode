@@ -40,9 +40,10 @@ class Solution(object):
                 left = mid+1
             elif nums[mid] ==target:
                 right = mid-1
-
+        # 说明没有找到一个nums[mid]!=target and nums[mid+1] ==target,那就是mid为边界了
         if left>right:
             res.append(mid)
+        # 说明有满足条件的，那么mid+1为边界
         else:
             res.append(mid+1)
         left = mid+1
@@ -60,13 +61,6 @@ class Solution(object):
         else:
             res.append(mid-1)
         return res
-
-
-
-
-
-
-
 
 print(Solution().searchRange([1,2,3,4,4,4,5],4))
 
