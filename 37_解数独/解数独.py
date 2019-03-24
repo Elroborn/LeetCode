@@ -4,7 +4,7 @@ Created on 2019/3/23 21:14
 @author: coderwangson
 """
 "#codeing=utf-8"
-# ref https://blog.csdn.net/weixin_41958153/article/details/80894433
+#ref https://blog.csdn.net/weixin_41958153/article/details/80894433
 class Solution(object):
 
     def isValidSudoku(self, board):
@@ -33,24 +33,24 @@ class Solution(object):
                         return False
         return True
 
-
-    def dfs(self,board):
+    def dfs(self, board):
         for i in range(9):
             for j in range(9):
                 if board[i][j]=='.':
-                    for k in range(10):
-                        board[i][j] = k
+                    for k in '123456789':
+                        board[i][j] =k
                         if self.isValidSudoku(board) and self.dfs(board):
                             return True
-                        board[i][j] = '.'
+                        board[i][j]='.'
                     return False
+        return True
+
     def solveSudoku(self, board):
         """
         :type board: List[List[str]]
         :rtype: None Do not return anything, modify board in-place instead.
         """
         self.dfs(board)
-        return board
 print(Solution().solveSudoku([
   ["5","3",".",".","7",".",".",".","."],
   ["6",".",".","1","9","5",".",".","."],
