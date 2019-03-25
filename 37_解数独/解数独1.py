@@ -18,7 +18,6 @@ class Solution(object):
                 return True
         k = (i//3)*3+j//3
         for nums in '123456789':
-
             # 看行，列，块是否被用
             # 这样说明第一次用
             if row[i].get(nums,0)==0 and col[j].get(nums,0)==0 and block[k].get(nums,0)==0:
