@@ -14,11 +14,11 @@ class Solution(object):
         for i in range(start,len(candidates)):
             # book[i]是为了避免某个位置的重复
             # candidates[i] not in candidates[:i]是为了避免在前面的数据中重复
-            if book[i] ==0 and candidates[i] not in candidates[:i]:
-                book[i] =1
+            if candidates[i] not in candidates[:i]:
+                # book[i] =1
                 out.append(candidates[i])
-                self.dfs(i,book,candidates,target-candidates[i],out,res)
-                book[i] = 0
+                self.dfs(i+1,book,candidates,target-candidates[i],out,res)
+                # book[i] = 0
                 out.remove(candidates[i])
     def combinationSum2(self, candidates, target):
         """
@@ -35,3 +35,25 @@ class Solution(object):
         return res
 
 print(Solution().combinationSum2([10,1,2,7,6,1,5],8))
+
+
+# class Solution:
+#     def __init__(self):
+#         self.result = []
+#
+#     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+#         # 排序是 防止出现[1,7],[7,1]这样的重复
+#         candidates.sort()
+#         self.getResult(candidates, target, [])
+#         return self.result
+#
+#     def getResult(self, nums, target, buff):
+#         if target == 0:
+#             self.result.append(list(buff))
+#         for i in range(len(nums)):
+#             if nums[i] > target or nums[i] in nums[:i]:
+#                 continue
+#             buff.append(nums[i])
+#             self.getResult(nums[i + 1:], target - nums[i], buff)
+#             buff.pop()
+#         return
