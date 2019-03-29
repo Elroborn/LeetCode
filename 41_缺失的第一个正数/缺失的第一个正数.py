@@ -16,19 +16,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if len(nums) ==0:
+        length = len(nums)
+        if length ==0:
             return 1
-        max = nums[0]
-        for i in nums[1:]:
-            if i>max:
-                max = i
-        nums_1 = [0 for i in range(max+2)]
-        for i in nums:
-            nums_1[abs(i)] = 1
+        for i in range(length):
+            while nums[i]>0 and nums[i]!=i+1 and nums[i]<=length:
+                index = nums[i] -1
+                if nums[index] ==nums[i]:
+                    nums[i] = 0
+                    break
+                t = (nums[index],nums[i])
+                nums[i],nums[index] = t
+        i = 0
+        while i <length and nums[i]==i+1:
+            i+=1
+        return i+1
 
-        for i in range(1,len(nums_1)):
-            if nums_1[i] ==0:
-                return i
-
-
-print(Solution().firstMissingPositive([0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0]))
+print(Solution().firstMissingPositive([3,4,-1,1]))
