@@ -5,7 +5,6 @@ Created on 2018年12月21日
 '''
 "#codeing=utf-8"
 # ref ：https://blog.csdn.net/hk2291976/article/details/51165010
-#TODO 没有写md文件
 class Solution(object):
     @staticmethod
     def myMatch(s,i,p,j):
