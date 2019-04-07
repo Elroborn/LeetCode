@@ -5,6 +5,7 @@ Created on 2018年12月21日
 '''
 "#codeing=utf-8"
 # ref ：https://blog.csdn.net/weixin_39781462/article/details/82999610
+# ref https://blog.csdn.net/qq_17550379/article/details/84110005
 class Solution:
     def isMatch(self, s, p):
         """
@@ -34,7 +35,7 @@ class Solution:
                 else:
                     dp[i][j] = (p[j-1]=="." or s[i-1]==p[j-1]) and dp[i-1][j-1]
         return dp[n][m]
-print(Solution().isMatch("aa", "a*"))
+print(Solution().isMatch("aa", "..."))
 
 
 
