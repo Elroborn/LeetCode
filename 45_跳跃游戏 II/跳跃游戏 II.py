@@ -7,6 +7,7 @@ Created on 2019/4/7 20:35
 
 # may ref http://www.cnblogs.com/grandyang/p/4373533.html
 # bfs 超时
+#ref https://www.jianshu.com/p/1c3ba23a522e
 class Solution(object):
     def jump(self, nums):
         """
@@ -29,6 +30,8 @@ class Solution(object):
                 return res
             if nums[v]>0:
                 next_level = list(range(v+1,v+1+nums[v]))
+                if (n-1) in next_level:
+                    return res+1
                 q.extend(next_level)
             if firstNode == lastNode:
                 res +=1
