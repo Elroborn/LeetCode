@@ -4,7 +4,6 @@ Created on 2019/4/9 22:00
 @author: coderwangson
 """
 "#codeing=utf-8"
-# ref https://leetcode-cn.com/problems/permutations/comments/  忘了二进制吧
 import copy
 class Solution(object):
     def perm(self,a,start,res):
@@ -23,4 +22,4 @@ class Solution(object):
         res = []
         self.perm(nums,0,res)
         return res
-print(Solution().permute([1,2,3]))
+print(Solution().permute([1,1,2,2]))
