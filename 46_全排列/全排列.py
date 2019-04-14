@@ -17,7 +17,8 @@ class Solution(object):
                 book[j] =1
                 tmp.append(nums[j])
                 self.dfs(i+1,nums,book,tmp,res)
-                tmp.remove(nums[j])
+                # 用pop弹出最后一个，不是用remove移除，因为remove移除是移走的最后一个图片
+                tmp.pop(-1)
                 book[j] =0
 
 
