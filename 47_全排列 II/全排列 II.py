@@ -5,9 +5,8 @@ Created on 2019/4/10 20:34
 """
 "#codeing=utf-8"
 import copy
-# TODO 待处理，说明你在全排列里面写的用book的要么有问题，要么不通用，在这里失败
-# TODO 这个book的排列在全排列中提交成功，但是对于这个有重复的就会失败，要找原因
 
+# 无[2, 1, 2, 1]
 # class Solution(object):
 #     def perm(self,nums,i,tmp,res,book):
 #         if i==len(nums):
@@ -18,7 +17,7 @@ import copy
 #             book[j] =1
 #             tmp.append(nums[j])
 #             self.perm(nums,i+1,tmp,res,book)
-#             tmp.remove(nums[j])
+#             tmp.pop(nums[j])
 #             book[j] = 0
 #
 #     def permuteUnique(self, nums):
