@@ -14,7 +14,7 @@ class Solution(object):
         """
         d =  {}
         for s in strs:
-            k = tuple(sorted(s))
+            k = "".join(sorted(s))
             if d.get(k) ==None:
                 d[k] =[]
             d[k].append(s)
