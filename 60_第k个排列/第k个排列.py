@@ -7,19 +7,15 @@ Created on 2019/4/27 21:14
 import copy
 
 class Solution(object):
-    def dfs(self,data,i,tmp,count,k,res):
+    def dfs(self,data,i,count,k,res):
         if i==len(data):
-            res.append(copy.copy(tmp))
+            res.append(copy.copy(data))
             return
 
         for j in range(i,len(data)):
-            tmp.append(str(data[j]))
             data[i],data[j] = data[j],data[i]
-            self.dfs(data,i+1,tmp,count,k,res)
+            self.dfs(data,i+1,count,k,res)
             data[i], data[j] = data[j], data[i]
-            tmp.pop(-1)
-        if len(res) ==k:
-            return
     def getPermutation(self, n, k):
         """
         :type n: int
@@ -29,7 +25,8 @@ class Solution(object):
         tmp = []
         res = []
         data = list(range(1,n+1))
-        self.dfs(data,0,tmp,0,k,res)
-        return ''.join(res[k-1])
+        self.dfs(data,0,0,k,res)
+        print(res)
+        return None
 print(Solution().getPermutation(3,3))
 
