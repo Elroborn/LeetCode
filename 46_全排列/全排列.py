@@ -32,4 +32,4 @@ class Solution(object):
         tmp = []
         self.dfs(0,nums,book,tmp,res)
         return res
-print(Solution().permute([1,1,2,2]))
+print(Solution().permute([1,2,3]))
