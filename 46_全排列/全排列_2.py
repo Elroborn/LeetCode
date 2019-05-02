@@ -22,4 +22,4 @@ class Solution(object):
         res = []
         self.perm(nums,0,res)
         return res
-print(Solution().permute([1,1,2,2]))
+print(Solution().permute([1,2,3]))
