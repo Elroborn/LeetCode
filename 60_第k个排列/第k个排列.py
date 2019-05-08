@@ -6,8 +6,8 @@ Created on 2019/4/27 21:14
 "#codeing=utf-8"
 import copy
 # https://segmentfault.com/a/1190000018246661
+# https://blog.csdn.net/qq_17550379/article/details/84959851
 
-# https://www.google.com.hk/search?q=%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97&ie=utf-8
 class Solution(object):
 
     def getPermutation(self, n, k):
@@ -23,7 +23,10 @@ class Solution(object):
         for i in range(1,n):
             fact *=i # (n-1) !
         round = n - 1 # 轮数
-        k -= 1 # 对于取余来说比如我们现在对于n = 4 k =3的情况 那么很简单能确定
+        # k 是从1开始，而索引从0开始，所以k-=1
+        # 比如 [1,2] 我们如果k = 1的话， 则k//1 = 1 k%1 = 1,可以发现将会以2开头，所以出错
+
+        k -= 1
         finalRes = []
         while round >= 0:
             index = int(k / fact)
