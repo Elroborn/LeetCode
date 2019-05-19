@@ -26,6 +26,4 @@ class Solution(object):
                 else: dp[i][j] = dp[i-1][j] + dp[i][j-1]
         return dp[m-1][n-1]
 
-print(Solution().uniquePathsWithObstacles(
-
-    [[1, 0]]))
+print(Solution().uniquePathsWithObstacles([[1, 0]]))
