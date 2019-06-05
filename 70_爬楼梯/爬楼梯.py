@@ -4,6 +4,8 @@ Created on 2019/5/29 19:58
 @author: coderwangson
 """
 "#codeing=utf-8"
+
+# http://www.sohu.com/a/149075950_684445
 class Solution(object):
     def climbStairs(self, n):
         """
