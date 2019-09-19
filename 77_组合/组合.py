@@ -8,7 +8,7 @@ Created on 2019/6/18 15:31
 import copy
 class Solution(object):
     def dfs(self,i,n,k,res,current):
-        if len(current) ==k:
+        if len(current) == k:
             res.append(copy.copy((current)))
         else:
             for tmp in range(i,n+1):
