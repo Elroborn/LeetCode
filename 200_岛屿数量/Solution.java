@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 class Solution {
+    // 宽度搜索 BFS
     public int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0) {
             return 0;
