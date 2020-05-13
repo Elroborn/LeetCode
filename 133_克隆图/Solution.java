@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 // Definition for a Node.
@@ -25,17 +24,20 @@ class Node {
 
 class Solution {
     public Node cloneGraph(Node node) {
-        Set<Integer> visited = new HashSet<>();
+        HashMap<Node,Node> visited = new HashMap<>();
         return dfs(node, visited);
     }
-    public Node dfs(Node node,Set<Integer> visited){
+    public Node dfs(Node node,HashMap<Node,Node>  visited){
+        if(node ==null){
+            return null;
+        }
+        if(visited.containsKey(node)){
+            return visited.get(node);
+        }
         Node new_node = new Node(node.val);
+        visited.put(node, new_node);
         for(Node n:node.neighbors){
-            if(!visited.contains(n.val)){
-                visited.add(n.val);
-                new_node.neighbors.add(dfs(n,visited));
-                visited.remove(n.val);
-            }
+            new_node.neighbors.add(dfs(n,visited));
         }
         return new_node;
     }
