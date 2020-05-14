@@ -7,8 +7,9 @@ class Solution {
         char[] ch = s.toCharArray();
 
         int i = 0;
+        StringBuilder sb ;
         while(i<ch.length){
-            StringBuilder sb = new StringBuilder();
+            sb = new StringBuilder();
             while(i<ch.length && ch[i]>='0' && ch[i]<='9'){
                 sb.append(ch[i]);
                 i++;
@@ -45,9 +46,13 @@ class Solution {
             }
  
         }
-        return s2.peek();
+        sb = new StringBuilder();
+        while(!s2.isEmpty()){
+            sb.insert(0,s2.pop());
+        }
+        return sb.toString();
     }
     public static void main(String[] args) {
-        System.out.println(new Solution().decodeString("3[a2[c]]"));
+        System.out.println(new Solution().decodeString("3[a]2[bc]"));
     }
 }
