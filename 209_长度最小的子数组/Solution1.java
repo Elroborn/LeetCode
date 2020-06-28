@@ -1,26 +1,30 @@
-class Solution1 {
+/*
+ * @Descripttion: 
+ * @Author: coderwangson
+ * @Date: 2020-04-21 12:27:34
+ * @FilePath: \leetcode\209_长度最小的子数组\Solution1.java
+ * @LastEditTime: 2020-06-28 10:14:26
+ */ 
+class Solution {
     public int minSubArrayLen(int s, int[] nums) {
-        int left = 0,right = 0;
-        int res = Integer.MAX_VALUE;
-        int sum = 0;
-        while(right<nums.length){
-            while(sum<s && right<nums.length){
-                sum+=nums[right];
-                right++;//扩大窗口
-            }
-            while(sum>=s && left<nums.length){
-                res = Math.min(res, right-left);
-                sum-=nums[left];
-                left++; //缩小窗口
+        if(nums.length==0){
+            return 0;
+        }
+        int[] preFix = new int[nums.length+1];
+        preFix[0] = 0;
+        for(int i=1;i<=nums.length;i++){
+            preFix[i] = nums[i-1] + preFix[i-1];
+        }
+        // sum[i,j] = preFix[j+1] - preFix[i] e.g. sum[0,0] = preFix[1] - preFix[0]
+        for(int w = 0;w<nums.length;w++){
+            for(int i=0;i+w<nums.length;i++){
+                int t = preFix[i+w+1] - preFix[i];
+                if(t>=s){
+                    return w+1;
+                }
             }
         }
+        return 0;
 
-        return res==Integer.MAX_VALUE?0:res;
-        
-    }
-    public static void main(String[] args) {
-        int nums[] = {2,3,1,2,4,3};
-        System.out.println(new Solution1().minSubArrayLen(7, nums));
-        
     }
 }

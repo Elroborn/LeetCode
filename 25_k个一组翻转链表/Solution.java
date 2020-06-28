@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @Author: coderwangson
+ * @Date: 2020-05-16 09:25:49
+ * @FilePath: \leetcode\25_k个一组翻转链表\Solution.java
+ * @LastEditTime: 2020-06-28 11:00:01
+ */ 
+
 //  Definition for singly-linked list.
 class ListNode {
      int val;
