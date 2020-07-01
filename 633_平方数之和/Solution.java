@@ -3,11 +3,12 @@
  * @Author: coderwangson
  * @Date: 2020-07-01 11:25:07
  * @FilePath: \leetcode\633_平方数之和\Solution.java
- * @LastEditTime: 2020-07-01 11:32:13
+ * @LastEditTime: 2020-07-01 11:35:04
  */ 
 class Solution {
     public boolean judgeSquareSum(int c) {
         int i = 0;
+        // i^2 + j^2 接近c，且i从0开始，所以j从sqrt c即可
         int j = (int) Math.sqrt(c);
         int t = 0;
         while(i<=j){
