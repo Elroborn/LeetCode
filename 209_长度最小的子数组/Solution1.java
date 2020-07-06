@@ -3,9 +3,9 @@
  * @Author: coderwangson
  * @Date: 2020-04-21 12:27:34
  * @FilePath: \leetcode\209_长度最小的子数组\Solution1.java
- * @LastEditTime: 2020-06-28 10:14:26
+ * @LastEditTime: 2020-07-06 10:46:59
  */ 
-class Solution {
+class Solution1 {
     public int minSubArrayLen(int s, int[] nums) {
         if(nums.length==0){
             return 0;
