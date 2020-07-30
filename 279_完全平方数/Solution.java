@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @Author: coderwangson
+ * @Date: 2020-05-08 10:39:41
+ * @FilePath: \leetcode\279_完全平方数\Solution.java
+ * @LastEditTime: 2020-07-28 11:19:10
+ */ 
+
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
