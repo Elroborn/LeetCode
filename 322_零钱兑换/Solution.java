@@ -1,3 +1,10 @@
+/*
+ * @Descripttion: 
+ * @Author: coderwangson
+ * @Date: 2020-05-16 10:24:16
+ * @FilePath: \leetcode\322_零钱兑换\Solution.java
+ * @LastEditTime: 2020-08-02 13:09:20
+ */ 
 class Solution {
     // dp[n] = min(dp[n-coin]+1)  coin in conis
     // 比如你要求amount为11，则求出来amount=10 的再加入一枚1即可或者amount 9的再加入一枚2即可，所以有最小独立子问题
