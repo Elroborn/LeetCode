@@ -6,35 +6,32 @@ import java.util.List;
  * @Author: coderwangson
  * @Date: 2020-08-02 13:57:05
  * @FilePath: \leetcode\46_全排列\Solution2.java
- * @LastEditTime: 2020-08-02 14:29:50
- */ 
+ * @LastEditTime: 2020-08-11 10:38:00
+ */
 class Solution2 {
-    private List<List<Integer>> res;
     public List<List<Integer>> permute(int[] nums) {
-        res = new ArrayList<>();
-        int[] vis = new int[nums.length];
+        List<List<Integer>> res = new ArrayList<>();
         List<Integer> tmp = new ArrayList<>();
-        dfs(nums,0,vis,tmp);
+        boolean[] vis = new boolean[nums.length];
+        backTrack(nums,res,tmp,vis);
         return res;
-
     }
-    private void dfs(int[] nums, int i,int[] vis,List<Integer>  tmp){
-        if(i==nums.length){
+
+    public void backTrack(int[] nums,List<List<Integer>> res,List<Integer> tmp,boolean[] vis){
+        if(tmp.size() == nums.length){
             res.add(new ArrayList<>(tmp));
             return;
         }
-        for(int j=0;j<nums.length;j++){
-            if(vis[j]==0){
-                vis[j] = 1;
-                tmp.add(nums[j]);
-                dfs(nums, i+1, vis,tmp);
-                tmp.remove(tmp.size()-1);
-                vis[j] = 0;
+
+        for(int i=0;i<nums.length;i++){
+            if(!vis[i]){
+                tmp.add(nums[i]);
+                vis[i] = true;
+                backTrack(nums, res, tmp, vis);
+                vis[i] = false;
+                tmp.remove(tmp.size() - 1);
             }
         }
-    }
-    public static void main(String[] args) {
-        int[] nums = {1,1,2};
-        new Solution2().permute(nums);
+
     }
 }
