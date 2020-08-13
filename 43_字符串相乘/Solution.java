@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @Author: coderwangson
+ * @Date: 2020-05-29 10:34:04
+ * @FilePath: \leetcode\43_字符串相乘\Solution.java
+ * @LastEditTime: 2020-08-13 10:54:56
+ */
+
 
 // 字符串乘法
 class Solution {
@@ -11,6 +19,8 @@ class Solution {
                 int s = tmp+res[p2];
                 res[p1] += s/10;
                 res[p2] = s%10;
+                // System.out.println(res[p1]);
+
             }
         }
         int j = 0;
@@ -27,8 +37,8 @@ class Solution {
         return sb.length()==0?"0":sb.toString();
     }
     public static void main(String[] args) {
-        String s1 = "123";
-        String s2 = "45";
+        String s1 = "10";
+        String s2 = "10";
         System.out.println(new Solution().multiply(s1, s2));
     }
 }
