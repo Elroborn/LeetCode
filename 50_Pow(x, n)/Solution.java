@@ -1,3 +1,10 @@
+/*
+ * @Descripttion: 
+ * @Author: coderwangson
+ * @Date: 2020-05-03 09:49:18
+ * @FilePath: \leetcode\50_Pow(x, n)\Solution.java
+ * @LastEditTime: 2020-08-21 11:07:57
+ */
 class Solution {
     public double myPow(double x, int n) {
         if(n>=0){
@@ -5,7 +12,6 @@ class Solution {
         }else{
             return 1.0/helper(x,-n);
         }
-
     }
     public double helper(double x,int n){
         if(n==0){
