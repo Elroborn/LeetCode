@@ -1,17 +1,17 @@
 /*
  * @Descripttion: 
  * @Author: coderwangson
- * @Date: 2020-04-22 10:27:20
- * @FilePath: \leetcode\557_反转字符串中的单词 III\Solution.java
- * @LastEditTime: 2020-08-30 10:21:22
+ * @Date: 2020-08-30 10:07:58
+ * @FilePath: \leetcode\557_反转字符串中的单词 III\Solution1.java
+ * @LastEditTime: 2020-08-30 10:26:25
  */
-class Solution {
-    
+class Solution1 {
     public String reverseWords(String s) {
-        int i = 0;
         StringBuilder sb = new StringBuilder();
+        StringBuilder t = new StringBuilder();
+        int i = 0;
         while(i<s.length()){
-            StringBuilder t = new StringBuilder(); 
+            t = new StringBuilder();
             while(i<s.length() && s.charAt(i)!=' '){
                 t.append(s.charAt(i));
                 i++;
@@ -29,7 +29,7 @@ class Solution {
         return sb.toString();
     }
     public static void main(String[] args) {
-        String s = "Let's     take LeetCode contest  ";
-        System.out.println(new Solution().reverseWords(s)+"||");
+        String s = "Let's take LeetCode contest  ";
+        System.out.println(new Solution1().reverseWords(s)+"||");
     }
 }
