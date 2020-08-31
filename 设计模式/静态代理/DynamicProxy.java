@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
  * @Author: coderwangson
  * @Date: 2020-08-24 15:57:57
  * @FilePath: \leetcode\设计模式\静态代理\DynamicProxy.java
- * @LastEditTime: 2020-08-24 16:11:31
+ * @LastEditTime: 2020-08-30 17:09:31
  */
 // 动态代理的角色和静态代理的一样 .
 // 动态代理的代理类是动态生成的 . 静态代理的代理类是我们提前写好的
@@ -20,11 +20,15 @@ import java.lang.reflect.Proxy;
 // 租房接口
 interface Rent{
     void rent();
+    void test();
 }
 // 房东 需要实现租房接口
 class Host implements Rent{
     public void rent(){
         System.out.println("房子出租");
+    }
+    public void test(){
+        System.out.println("test");
     }
 }
 
@@ -42,6 +46,7 @@ class ProxyInvocationHandler implements InvocationHandler{
     @Override
     public Object invoke(Object proxy,Method method,Object[] args) throws Throwable{
         seeHouse();
+        System.out.println(method);
         Object res = method.invoke(rent, args);
         fare();
         return res;
@@ -64,6 +69,7 @@ class DynamicProxy{
 
         Rent proxy = (Rent) pih.getProxy();
         proxy.rent();
+        proxy.test();// 所有的方法都会被代理
     }
     
 }
