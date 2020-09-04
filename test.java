@@ -3,7 +3,7 @@
  * @Author: coderwangson
  * @Date: 2020-04-18 09:02:40
  * @FilePath: \leetcode\test.java
- * @LastEditTime: 2020-08-02 11:23:31
+ * @LastEditTime: 2020-09-03 21:52:19
  */ 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,18 +63,25 @@ public class test{
         //     }
         // }
         // System.out.println(l1);
-        Scanner in = new Scanner(System.in);
-        int m = in.nextInt();
-        int n = in.nextInt();
-        int q = in.nextInt();
+        // Scanner in = new Scanner(System.in);
+        // int m = in.nextInt();
+        // int n = in.nextInt();
+        // int q = in.nextInt();
 
         // String s = in.nextLine(); //因为int只读到回车前面，所以需要nextLine()
         // System.out.println(s);
         // s = in.nextLine();//
         
-        String s = in.next(); //直接会帮忙处理
-        System.out.println(s.equals("abc"));
- 
+        // String s = in.next(); //直接会帮忙处理
+        // System.out.println(s.equals("abc"));
+        int a = 1;
+        Integer b = 1;
+        Integer c = Integer.valueOf("1");
+        String s1 = "abc";
+        StringBuilder sb = new StringBuilder();
+        sb.append("abc");
+        String s2 = sb.toString();
+        System.out.println(s1==s2);
     }
 
 }
