@@ -1,3 +1,10 @@
+/*
+ * @Descripttion: 
+ * @Author: coderwangson
+ * @Date: 2020-04-19 12:51:20
+ * @FilePath: \leetcode\54_螺旋矩阵\Solution.java
+ * @LastEditTime: 2020-09-05 11:26:44
+ */
 import java.util.List;
 import java.util.ArrayList;
 class Solution {
@@ -49,25 +56,22 @@ class Solution {
         if(matrix==null || matrix.length==0){
             return res;
         }
-        int row = matrix.length;
-        int col = matrix[0].length;
-        boolean vis[][] = new boolean[row][col];
-        int dir[][] ={{0,1},{1,0},{0,-1},{-1,0}};
-        int r=0,c=0,d=0;
-        for(int i=0;i<row*col;i++){
-            res.add(matrix[r][c]);
-            vis[r][c] = true;
-            int nr = r+ dir[d][0];
-            int nc = c+ dir[d][1];
-            if(nr<row && nr>=0 && nc<col && nc>=0 && vis[nr][nc]==false){
-                r = nr;
-                c = nc;
-            }else{
-                //调整方向
-                d = (d+1)%4;
-                r = r+ dir[d][0];
-                c = c+ dir[d][1];
+        int[][] dirs = {{0,1},{1,0},{0,-1},{-1,0}};
+        int dIndex = 0;
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int nums = rows*cols;
+        boolean[][] vis = new boolean[rows][cols];
+        int i = 0,j = 0;
+        for(int k = 0;k<nums;k++){
+            res.add(matrix[i][j]);
+            vis[i][j] = true;
+            int new_i = i + dirs[dIndex][0],new_j = j + dirs[dIndex][1];
+            if(new_i<0 || new_i>=rows || new_j<0 || new_j>=cols || vis[new_i][new_j]){
+                dIndex = (dIndex+1)%4;
             }
+            i+=dirs[dIndex][0];
+            j+=dirs[dIndex][1];
         }
         return res;
     }
