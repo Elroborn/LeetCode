@@ -1,4 +1,12 @@
+/*
+ * @Descripttion: 
+ * @Author: coderwangson
+ * @Date: 2020-05-12 10:37:21
+ * @FilePath: \leetcode\494_目标和\Solution.java
+ * @LastEditTime: 2020-09-06 10:33:56
+ */
 class Solution {
+    
     int cnt = 0;
     public int findTargetSumWays(int[] nums, int S) {
         dfs(0, nums, S, 0);
