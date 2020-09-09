@@ -3,8 +3,11 @@
  * @Author: coderwangson
  * @Date: 2020-04-18 09:02:40
  * @FilePath: \leetcode\test.java
- * @LastEditTime: 2020-09-03 21:52:19
+ * @LastEditTime: 2020-09-08 21:32:17
  */ 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -12,9 +15,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 class Person implements Cloneable{
-    int a;
+    public int age;
     public Person(int x){
-        a = x;
+        age = x;
+    }
+    public void print(){
+        System.out.println("this age is "+this.age);
     }
     @Override
     public Object clone(){
@@ -82,6 +88,19 @@ public class test{
         sb.append("abc");
         String s2 = sb.toString();
         System.out.println(s1==s2);
+        try {
+            Field f =  Person.class.getField("age");
+
+            Constructor cons =  Person.class.getConstructor(int.class);
+            Person p = (Person) cons.newInstance(18);
+
+            Method method = Person.class.getMethod("print");
+            method.invoke(new Person(18));
+        } catch (Exception e) {
+            //TODO: handle exception
+            System.out.println(e);
+        }
+ 
     }
 
 }
