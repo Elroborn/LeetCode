@@ -1,11 +1,11 @@
 /*
- * @Author: your name
+ * @Descripttion: 
+ * @Author: coderwangson
  * @Date: 2020-09-16 10:47:41
- * @LastEditTime: 2020-09-16 11:04:08
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
  * @FilePath: \leetcode\剑指 Offer 12. 矩阵中的路径\Solution.java
+ * @LastEditTime: 2020-09-16 11:08:20
  */
+
 class Solution {
     private int[][] dirs = {{0,1},{0,-1},{1,0},{-1,0}};
     public boolean exist(char[][] board, String word) {
@@ -23,9 +23,7 @@ class Solution {
             }
         }
         return false;
-
     }
-
     private boolean dfs(char[][] board, String word, boolean[][] vis, int i, int j, StringBuilder sb) {
         if(sb.length() == word.length()){
             return sb.toString().equals(word);
