@@ -6,7 +6,7 @@ import java.util.List;
  * @Author: coderwangson
  * @Date: 2020-08-02 13:57:05
  * @FilePath: \leetcode\46_全排列\Solution2.java
- * @LastEditTime: 2020-08-11 10:38:00
+ * @LastEditTime: 2020-09-17 21:45:22
  */
 class Solution2 {
     public List<List<Integer>> permute(int[] nums) {
