@@ -1,3 +1,10 @@
+'''
+Descripttion: 
+Author: coderwangson
+Date: 2020-09-13 21:56:37
+FilePath: \leetcode\18_四数之和\四数之和.py
+LastEditTime: 2020-10-05 10:05:26
+'''
 """
 Created on 2019/2/27 21:47
 @File:四数之和.py
@@ -25,10 +32,10 @@ class Solution(object):
                 while mid<right:
                     if nums[mid]+nums[right]+nums[left]==tmp_target:
                         res.append([nums[i],nums[left],nums[mid],nums[right]])
+                        while mid<right and nums[mid+1]==nums[mid]:mid+=1
+                        while mid<right and nums[right-1]==nums[right]:right-=1
                         mid+=1
                         right-=1
-                        while mid<right and nums[mid-1]==nums[mid]:mid+=1
-                        while mid<right and nums[right]==nums[right+1]:right-=1
                     elif nums[mid]+nums[right]+nums[left]<tmp_target:
                         mid+=1
                     else:
