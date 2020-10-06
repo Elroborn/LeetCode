@@ -3,11 +3,11 @@
  * @Author: coderwangson
  * @Date: 2020-08-12 11:27:08
  * @FilePath: \leetcode\剑指 Offer 06. 从尾到头打印链表\Solution.java
- * @LastEditTime: 2020-08-12 12:18:38
+ * @LastEditTime: 2020-10-06 10:13:50
  */
 
 // Definition for singly-linked list.
-public class ListNode {
+class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
