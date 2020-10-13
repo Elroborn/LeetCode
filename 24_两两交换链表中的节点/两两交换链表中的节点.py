@@ -1,3 +1,10 @@
+'''
+Descripttion: 
+Author: coderwangson
+Date: 2020-09-13 21:56:38
+FilePath: \leetcode\24_两两交换链表中的节点\两两交换链表中的节点.py
+LastEditTime: 2020-10-13 16:37:13
+'''
 """
 Created on 2019/3/5 21:04
 @File:两两交换链表中的节点.py
@@ -26,7 +33,7 @@ class Solution(object):
         while pre.next and pre.next.next:
             p = pre.next
             q = p.next
-
+            
             pre.next = q
             p.next = q.next
             q.next =p
