@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * @Descripttion: 
  * @Author: coderwangson
  * @Date: 2020-07-19 11:06:06
  * @FilePath: \leetcode\763_划分字母区间\Solution.java
- * @LastEditTime: 2020-07-19 11:18:34
+ * @LastEditTime: 2020-10-22 21:46:55
  */ 
 
 class Solution {
