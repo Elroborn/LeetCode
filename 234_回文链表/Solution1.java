@@ -6,7 +6,7 @@ import java.util.List;
  * @Author: coderwangson
  * @Date: 2020-10-23 09:26:20
  * @FilePath: \leetcode\234_回文链表\Solution1.java
- * @LastEditTime: 2020-10-23 09:49:02
+ * @LastEditTime: 2020-10-23 09:55:37
  */
 //  Definition for singly-linked list.
 class ListNode {
@@ -27,6 +27,7 @@ class Solution1 {
         while(i<j){
             System.out.println(list.get(i));
             System.out.println(list.get(j));
+            // 注意这个地方要用equals，如果== 对于超过127或者小于-128的数值，==将会失效，因为数据会到堆区，永不等
             if(list.get(i).equals(list.get(j))){
                 i++;
                 j--;
